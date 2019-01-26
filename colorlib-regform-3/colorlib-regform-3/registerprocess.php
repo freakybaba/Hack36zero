@@ -2,7 +2,11 @@
 
    session_start();
    $db=mysqli_connect("localhost","root","","ngodb");
+<<<<<<< HEAD
    if (isset($_POST['donor'])){
+=======
+   if (isset($_POST['register'])){
+>>>>>>> 26b1116c478a0f287eec5a4ca2cf1c69d6f296ea
       $name=mysql_real_escape_string($_POST['name']);
        $email=mysql_real_escape_string($_POST['email']);
         $phone=mysql_real_escape_string($_POST['phone']);

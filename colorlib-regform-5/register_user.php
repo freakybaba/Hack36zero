@@ -1,8 +1,12 @@
+<<<<<<< HEAD
 
 
 <!DOCTYPE html>
 
 
+=======
+<!DOCTYPE html>
+>>>>>>> 26b1116c478a0f287eec5a4ca2cf1c69d6f296ea
 <html lang="en">
 
 <head>
@@ -38,7 +42,11 @@
                     <h2 class="title">Meals Registration Form</h2>
                 </div>
                 <div class="card-body">
+<<<<<<< HEAD
                     <form  action="donor.php" method="POST" >
+=======
+                    <form method="POST">
+>>>>>>> 26b1116c478a0f287eec5a4ca2cf1c69d6f296ea
                         <div class="form-row m-b-55">
                             <div class="name">Name</div>
                             <div class="value">
@@ -118,7 +126,11 @@
                             </div>
                         </div>
                         <div>
+<<<<<<< HEAD
                             <button class="btn btn--radius-2 btn--red" type="submit" name="register">Register</button>
+=======
+                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+>>>>>>> 26b1116c478a0f287eec5a4ca2cf1c69d6f296ea
                         </div>
                     </form>
                 </div>
