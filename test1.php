@@ -34,7 +34,7 @@ echo $q2;
 
       function initMap() {
         var pyrmont = {lat: parseFloat("<?php echo $q2; ?>"), lng: parseFloat("<?php echo $q1; ?>")};
-        console.log(pyrmont); 
+        //console.log(pyrmont); 
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
           zoom: 15
