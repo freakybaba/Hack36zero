@@ -19,7 +19,7 @@ function showMap(position){
     lat = position.coords.latitude;
     long = position.coords.longitude;
     var latlong = new google.maps.LatLng(lat, long);
-    
+    str = long+ lat;
     var myOptions = {
         center: latlong,
         zoom: 16,
@@ -46,12 +46,16 @@ function showError(error){
 </script>
 </head>
 <body>
+ <div id="txtHint"></div>
     <button type="button" onclick="showPosition();">Show My Position on Google Map</button>
     <div id="embedMap" style="width: 600px; height: 400px;">
         <!--Google map will be embedded here-->
     </div>
     <br>
     <br>
-    <a href="test1.html" target="_blank">Visit NearbyPlaces</a> 
+    
+    
+    <button onclick="window.location='test1.php?q1='+long+'&q2='+lat;">do for me</button>
+    <!-- <iframe target="test1.html"></iframe>   -->
 </body>
 </html>                            

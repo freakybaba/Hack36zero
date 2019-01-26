@@ -1,3 +1,10 @@
+<?php
+$q1 = $_GET['q1'];
+$q2= $_GET['q2'];
+echo $q1;
+echo $q2;
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,7 +15,7 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 50%;
+        height: 100%;
       }
       /* Optional: Makes the sample page fill the window. */
       html, body {
@@ -21,46 +28,13 @@
       // This example requires the Places library. Include the libraries=places
       // parameter when you first load the API. For example:
       // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
-      var lat;
-      var lng;
+
       var map;
       var infowindow;
-      window.onload=function()
-      {
-        showPosition();
-      }
-      function showPosition(){
-          if(navigator.geolocation){
-              navigator.geolocation.getCurrentPosition(showMap, showError);
-          } else{
-              alert("Sorry, your browser does not support HTML5 geolocation.");
-          }
-      }
-
-          function showMap(position){
-              // Get location data
-              lat = position.coords.latitude;
-              lng = position.coords.longitude;
-          }
-
-          function showError(error){
-    if(error.code == 1){
-        result.innerHTML = "You've decided not to share your position, but it's OK. We won't ask you again.";
-    } else if(error.code == 2){
-        result.innerHTML = "The network is down or the positioning service can't be reached.";
-    } else if(error.code == 3){
-        result.innerHTML = "The attempt timed out before it could get the location data.";
-    } else{
-        result.innerHTML = "Geolocation failed due to unknown error.";
-    }
-}
-
-
-
 
       function initMap() {
-        var pyrmont = new google.maps.LatLng(lat, lng);
-
+        var pyrmont = {lat: parseFloat("<?php echo $q2; ?>"), lng: parseFloat("<?php echo $q1; ?>")};
+        console.log(pyrmont); 
         map = new google.maps.Map(document.getElementById('map'), {
           center: pyrmont,
           zoom: 15
@@ -76,11 +50,13 @@
       }
 
       function callback(results, status) {
-        if (status === google.maps.places.PlacesServiceStatus.OK) {
+      console.log("done",status);
+        
+        
           for (var i = 0; i < results.length; i++) {
             createMarker(results[i]);
           }
-        }
+        
       }
 
       function createMarker(place) {
@@ -98,7 +74,7 @@
     </script>
   </head>
   <body>
-    <div id="map"  style="width: 100%; height: 400px;border: solid 2px black;"></div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBthmiyAJPZhnevjY134eCOhVLPpw07Yb4&libraries=places&callback=initMap" async defer></script>
+    <div id='map'></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRslNaK8icBhk-UzmDjdukgFZ9RDBXqig&libraries=places&callback=initMap" ></script>
   </body>
 </html>
