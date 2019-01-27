@@ -50,7 +50,7 @@ echo $q2;
       }
 
       function callback(results, status) {
-      //console.log("done",status);
+      console.log("done",status);
         
         
           for (var i = 0; i < results.length; i++) {
@@ -68,7 +68,6 @@ echo $q2;
 
         google.maps.event.addListener(marker, 'click', function() {
           infowindow.setContent(place.name);
-            console.log(place.name);
           infowindow.open(map, this);
         });
       }
